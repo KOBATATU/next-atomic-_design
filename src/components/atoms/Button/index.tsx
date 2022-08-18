@@ -61,7 +61,11 @@ const Button = (props: ButtonProps) => {
   className += border ? toTailWindValue(border) : "";
   className += hover ? hoverExpansion(hover) : "hover:bg-blue-700" + " ";
 
-  return <button className={className}>{children}</button>;
+  return (
+    <button className={className} {...rest}>
+      {children}
+    </button>
+  );
 };
 
 export default Button;
