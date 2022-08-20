@@ -1,17 +1,12 @@
 const colors = {
-  primary: "#3f51b5",
-  primaryDark: "#2c387e",
-  primaryLight: "#6573c3",
-  secondary: "#f50057",
-  secondaryDark: "#ab003c",
-  secondaryLight: "#f73378",
-  border: "#cdced2",
-  danger: "#ed1c24",
-  dangerDark: "#a50d12",
-  gray: "#6b6b6b",
-  black: "#000000",
-  white: "#ffffff",
-  text: "#000000",
-} as const;
+  "text-black": "text-black",
+  "text-white": "text-white",
+  "text-red-500": "text-red-500",
+  "text-orange-500": "text-orange-500",
+  "text-yellow-500": "text-yellow-500",
+  "text-cyan-500": "text-cyan-500",
+  "text-blue-500": "text-blue-500",
+  "text-transparent": "text-transparent",
+};
 
 export default colors;

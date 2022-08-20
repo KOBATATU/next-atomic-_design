@@ -1,3 +1,4 @@
+import { themeKeyValue } from "themes";
 import type { HoverProp, Responsive, ResponsiveProp } from "types/styles";
 
 export function toTailWindValue<T>(prop?: Responsive<T>) {
@@ -13,14 +14,14 @@ export function toTailWindValue<T>(prop?: Responsive<T>) {
         responsiveKey === "lg" ||
         responsiveKey === "xl"
       ) {
-        className.push(responsiveKey + ":" + prop[responsiveKey]);
+        className.push(responsiveKey + ":" + toThemeValue(prop[responsiveKey]));
       }
     }
     //最後に空白を入れ結合しないようにする
     return className.join(" ") + " ";
   }
   //responsiveのオブジェクト以外できた時の対応
-  return prop + " ";
+  return toThemeValue(prop) + " ";
 }
 
 function isResponsivePropType<T>(prop: any): prop is ResponsiveProp<T> {
@@ -32,6 +33,14 @@ function isResponsivePropType<T>(prop: any): prop is ResponsiveProp<T> {
       prop.lg !== undefined ||
       prop.xl !== undefined)
   );
+}
+
+function toThemeValue(props: any) {
+  if (themeKeyValue[props] !== undefined) {
+    return themeKeyValue[props];
+  } else {
+    return props;
+  }
 }
 
 //hover用にリスト作成

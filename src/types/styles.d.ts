@@ -1,3 +1,6 @@
+import colors from "themes/colors";
+import fontSize from "themes/fontSize";
+
 /**
  * Responsiveプロパティ
  */
@@ -13,6 +16,10 @@ export type Responsive<T> = T | ResponsiveProp<T>;
 export type HoverProp = {
   hover: Array<string>;
 };
+
+interface keyType {
+  [key: string]: string;
+}
 
 /**
  * Flex
@@ -125,13 +132,5 @@ export type CSSPropertyGridColumn =
   | GridLine
   | (string & {});
 
-export type CSSPropertyGridRow = CSSPropertyGlobals | GridLine | (string & {});
-
-export type CSSPropertyGridAutoFlow =
-  | CSSPropertyGlobals
-  | "column"
-  | "dense"
-  | "row"
-  | (string & {});
-
-export type CSSPropertyGridArea = CSSPropertyGlobals | GridLine | (string & {});
+export type fontSizeType = keyof typeof fontSize | (string & {});
+export type colorType = keyof typeof colors | (string & {});
