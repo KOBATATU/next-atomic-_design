@@ -6,7 +6,7 @@ export const theme = {
   fontSize,
 } as const;
 
-export const themeKeyValue: keyType = {
+export const themeKeyValue = {
   ...colors,
   ...fontSize,
-} as const;
+};

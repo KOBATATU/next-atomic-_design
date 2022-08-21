@@ -9,18 +9,12 @@ const fontSize = {
   "text-2xl": "text-2xl",
   "text-3xl": "text-3xl",
   "text-4xl": "text-4xl",
+  "text-7xl": "text-7xl",
 };
 
-const _fontSize: keyType = {};
-
-//postcssが生成されたcssしか読み取らないようにしているため意図的にresponsive用途のcssを生成
-for (const responsiveKey of ["sm", "md", "lg", "xl"]) {
-  for (const key in fontSize) {
-    // @ts-inogre keyTypeで型を指定すると保管が効かなくなるのでエラー無視
-    const value = fontSize[key];
-    _fontSize[key] = value;
-    _fontSize[responsiveKey + ":" + key] = `${responsiveKey}:${value}`;
-  }
-}
+//postcssはhttps://zenn.dev/chabatake_i/articles/tailwindcss_introduction にある通り動的なものには反応せず文字列一致したものがクラスとして適用できる
+//そのため使わないが、動的に使うものだけはここで記載
+const _fontSize: keyType = { ...fontSize };
+_fontSize["md:text-base"] = "md:text-base";
 
 export default fontSize;

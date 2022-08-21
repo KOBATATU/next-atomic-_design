@@ -1,5 +1,5 @@
 import colors from "themes/colors";
-import fontSize from "themes/fontSize";
+import fontSize,  from "themes/fontSize";
 
 /**
  * Responsiveプロパティ
@@ -132,5 +132,5 @@ export type CSSPropertyGridColumn =
   | GridLine
   | (string & {});
 
-export type fontSizeType = keyof typeof fontSize | (string & {});
+export type fontSizeType = keyof typeof fontSize;
 export type colorType = keyof typeof colors | (string & {});
