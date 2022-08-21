@@ -1,8 +1,14 @@
 import { themeKeyValue } from "themes";
 import type { HoverProp, Responsive, ResponsiveProp } from "types/styles";
 
-export function toTailWindValue<T>(prop?: Responsive<T>) {
+export function toTailWindValue<T>(
+  prop?: Responsive<T>,
+  defaultValue?: string
+) {
+  if (defaultValue !== undefined && prop === undefined)
+    return defaultValue + " ";
   if (prop === undefined) return "";
+
   if (isResponsivePropType(prop)) {
     let className = [];
     for (const responsiveKey in prop) {

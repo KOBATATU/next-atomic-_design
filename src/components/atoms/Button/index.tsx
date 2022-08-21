@@ -1,4 +1,3 @@
-import { BoxProps } from "types/base";
 import type {
   colorType,
   fontSizeType,
