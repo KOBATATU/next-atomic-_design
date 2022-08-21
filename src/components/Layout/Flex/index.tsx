@@ -1,78 +1,98 @@
 import React from "react";
 import type {
+  AlignContent,
+  AlignItems,
+  backgroundColorsType,
+  borderColorType,
+  borderRadiusType,
+  borderType,
   colorType,
+  FlexDirection,
+  FlexWrap,
   fontSizeType,
-  HoverProp,
+  heightType,
+  JustifyContent,
+  JustifyItems,
+  marginBottomType,
+  marginLeftType,
+  marginRightType,
+  marginSizeType,
+  marginTopType,
+  marginXType,
+  marginYType,
+  maxHeightType,
+  maxWidthType,
+  paddingBottomType,
+  paddingLeftType,
+  paddingRightType,
+  paddingSizeType,
+  paddingTopType,
+  paddingXType,
+  paddingYType,
   Responsive,
+  textAlign,
+  widthType,
 } from "types/styles";
 import { hoverExpansion, toTailWindValue } from "utils/styles";
 
 export type FlexProps = {
   children?: React.ReactNode;
-  outline?: Responsive<string>;
-  boxSizing?: Responsive<string>;
-
+  //color
   textColor?: Responsive<colorType>;
-  backgroundColor?: Responsive<string>;
-
+  backgroundColor?: Responsive<backgroundColorsType>;
+  //text
   fontSize?: Responsive<fontSizeType>;
   fontWeight?: Responsive<string>;
   letterSpacing?: Responsive<string>;
   lineHeight?: Responsive<string>;
-  textAlign?: Responsive<string>;
-  borderRadius?: Responsive<string>;
-
+  textAlign?: Responsive<textAlign>;
   //width height
-  width?: Responsive<string>;
-  maxWidth?: Responsive<string>;
-  height?: Responsive<string>;
+  width?: Responsive<widthType>;
+  maxWidth?: Responsive<maxWidthType>;
+  maxHeight?: Responsive<maxHeightType>;
+  height?: Responsive<heightType>;
   minWidth?: Responsive<string>;
   minHeight?: Responsive<string>;
-
-  // //margin
-  margin?: Responsive<string>;
-  marginTop?: Responsive<string>;
-  marginRight?: Responsive<string>;
-  marginBottom?: Responsive<string>;
-  marginLeft?: Responsive<string>;
-  marginY?: Responsive<string>;
-  marginX?: Responsive<string>;
-
-  // //padding
-  padding?: Responsive<string>;
-  paddingTop?: Responsive<string>;
-  paddingRight?: Responsive<string>;
-  paddingBottom?: Responsive<string>;
-  paddingLeft?: Responsive<string>;
-  paddingX?: Responsive<string>;
-  paddingY?: Responsive<string>;
-
-  // //そのほか
-  border?: Responsive<string>;
-  overflow?: Responsive<string>;
-
+  //margin
+  margin?: Responsive<marginSizeType>;
+  marginTop?: Responsive<marginTopType>;
+  marginRight?: Responsive<marginRightType>;
+  marginBottom?: Responsive<marginBottomType>;
+  marginLeft?: Responsive<marginLeftType>;
+  marginY?: Responsive<marginYType>;
+  marginX?: Responsive<marginXType>;
+  //padding
+  padding?: Responsive<paddingSizeType>;
+  paddingTop?: Responsive<paddingTopType>;
+  paddingRight?: Responsive<paddingRightType>;
+  paddingBottom?: Responsive<paddingBottomType>;
+  paddingLeft?: Responsive<paddingLeftType>;
+  paddingX?: Responsive<paddingXType>;
+  paddingY?: Responsive<paddingYType>;
   //align
-  alignItems?: Responsive<string>;
-  alignContent?: Responsive<string>;
+  alignItems?: Responsive<AlignItems>;
+  alignContent?: Responsive<AlignContent>;
   //justify
-  justifyContent?: Responsive<string>;
-  justifyItems?: Responsive<string>;
+  justifyContent?: Responsive<JustifyContent>;
+  justifyItems?: Responsive<JustifyItems>;
   //flex
-  flexWrap?: Responsive<string>;
+  flexWrap?: Responsive<FlexWrap>;
   flexBasis?: Responsive<string>;
-  flexDirection?: Responsive<string>;
+  flexDirection?: Responsive<FlexDirection>;
   flexGrow?: Responsive<string>;
   flexShrink?: Responsive<string>;
-  justifySelf?: Responsive<string>;
-  alignSelf?: Responsive<string>;
   order?: Responsive<string>;
+  // そのほか
+  border?: Responsive<borderType>;
+  borderRadius?: Responsive<borderRadiusType>;
+  borderColor?: Responsive<borderColorType>;
+  overflow?: Responsive<string>;
 };
 
 const Flex = (props: FlexProps) => {
   let className: string = "";
   const {
     children,
-    boxSizing,
     fontSize,
     textColor,
     backgroundColor,
@@ -84,6 +104,7 @@ const Flex = (props: FlexProps) => {
     width,
     maxWidth,
     height,
+    maxHeight,
     paddingBottom,
     paddingTop,
     paddingLeft,
@@ -98,7 +119,6 @@ const Flex = (props: FlexProps) => {
     marginX,
     marginY,
     border,
-    outline,
     alignItems,
     alignContent,
     justifyContent,
@@ -108,16 +128,14 @@ const Flex = (props: FlexProps) => {
     flexDirection,
     flexGrow,
     flexShrink,
-    justifySelf,
-    alignSelf,
     order,
+    borderColor,
 
     ...rest
   } = props;
 
   className += toTailWindValue(textColor);
   className += toTailWindValue(backgroundColor);
-  className += toTailWindValue(boxSizing);
   className += toTailWindValue(fontSize);
   className += toTailWindValue(fontWeight);
   className += toTailWindValue(letterSpacing);
@@ -127,6 +145,7 @@ const Flex = (props: FlexProps) => {
   className += toTailWindValue(width);
   className += toTailWindValue(maxWidth);
   className += toTailWindValue(height);
+  className += toTailWindValue(maxHeight);
   className += toTailWindValue(paddingTop);
   className += toTailWindValue(paddingBottom);
   className += toTailWindValue(paddingLeft);
@@ -140,7 +159,6 @@ const Flex = (props: FlexProps) => {
   className += toTailWindValue(marginRight);
   className += toTailWindValue(marginX);
   className += toTailWindValue(marginY);
-  className += toTailWindValue(outline);
   className += toTailWindValue(alignItems);
   className += toTailWindValue(alignContent);
   className += toTailWindValue(justifyContent);
@@ -150,8 +168,7 @@ const Flex = (props: FlexProps) => {
   className += toTailWindValue(flexDirection);
   className += toTailWindValue(flexGrow);
   className += toTailWindValue(flexShrink);
-  className += toTailWindValue(justifySelf);
-  className += toTailWindValue(alignSelf);
+  className += toTailWindValue(borderColor);
 
   //default flex
   className += toTailWindValue("flex");

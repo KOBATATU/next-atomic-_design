@@ -1,12 +1,12 @@
 const colors = {
-  "text-black": "text-black",
-  "text-white": "text-white",
+  black: "text-black",
+  white: "text-white",
   red: "text-red-500",
   orange: "text-orange-500",
-  "text-yellow-500": "text-yellow-500",
-  "text-cyan-500": "text-cyan-500",
-  "text-blue-500": "text-blue-500",
-  "text-transparent": "text-transparent",
+  yellow: "text-yellow-500",
+  cyan: "text-cyan-500",
+  blue: "text-blue-500",
+  transparent: "text-transparent",
 };
 
 export default colors;

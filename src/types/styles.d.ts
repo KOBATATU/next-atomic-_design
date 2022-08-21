@@ -1,5 +1,27 @@
+import backgroundColors from "themes/backgound";
+import { borderColors, borderRadius, borders } from "themes/border";
 import colors from "themes/colors";
-import fontSize,  from "themes/fontSize";
+import fontSize from "themes/fontSize";
+import { heightSize, maxHeight } from "themes/height";
+import {
+  marginBottom,
+  marginLeft,
+  marginRight,
+  marginSize,
+  marginTop,
+  marginX,
+  marginY,
+} from "themes/margin";
+import {
+  paddingBottom,
+  paddingLeft,
+  paddingRight,
+  paddingSize,
+  paddingTop,
+  paddingX,
+  paddingY,
+} from "themes/padding";
+import { widthSize, maxWidth } from "themes/width";
 
 /**
  * Responsiveプロパティ
@@ -24,113 +46,99 @@ interface keyType {
 /**
  * Flex
  */
-type SelfPosition =
-  | "center"
-  | "end"
-  | "flex-end"
-  | "flex-start"
-  | "self-end"
+type AlignSelf =
+  | "self-auto"
   | "self-start"
-  | "start";
+  | "self-end"
+  | "self-center"
+  | "self-stretch"
+  | "self-baseline";
 
-type ContentPosition = "center" | "end" | "flex-end" | "flex-start" | "start";
+type JustifyContent =
+  | "justify-start"
+  | "justify-end"
+  | "justify-center"
+  | "justify-between"
+  | "justify-around"
+  | "sm:justify-center"
+  | "sm:justify-between";
 
-type ContentDistribution =
-  | "space-around"
-  | "space-between"
-  | "space-evenly"
-  | "stretch";
+type JustifyItems =
+  | "justify-items-start"
+  | "justify-items-end"
+  | "justify-items-center"
+  | "justify-items-stretch";
 
-type CSSPropertyGlobals =
-  | "-moz-initial"
-  | "inherit"
-  | "initial"
-  | "revert"
-  | "unset";
+type AlignItems =
+  | "items-start"
+  | "items-end"
+  | "items-center"
+  | "items-baseline"
+  | "items-stretch"
+  | "sm:items-center";
 
-export type CSSPropertyAlignItems =
-  | CSSPropertyGlobals
-  | SelfPosition
-  | "baseline"
-  | "normal"
-  | "stretch"
-  // コードの自動補完
-  | (string & {});
+type FlexWrap =
+  | "flex-wrap"
+  | "flex-wrap-reverse"
+  | "flex-nowrap"
+  | "sm:flex-wrap";
 
-export type CSSPropertyAlignContent =
-  | CSSPropertyGlobals
-  | ContentDistribution
-  | "center"
-  | "end"
-  | "flex-end"
-  | "flex-start"
-  | "start"
-  | "baseline"
-  | "normal"
-  | (string & {});
+type AlignContent =
+  | "content-center"
+  | "content-start"
+  | "content-end"
+  | "content-between"
+  | "content-around"
+  | "content-evenly";
 
-export type CSSPropertyJustifyItems =
-  | CSSPropertyGlobals
-  | SelfPosition
-  | "baseline"
-  | "left"
-  | "legacy"
-  | "normal"
-  | "right"
-  | "stretch"
-  | (string & {});
+type FlexDirection =
+  | "flex-row"
+  | "flex-row-reverse"
+  | "flex-col"
+  | "flex-col-reverse"
+  | "sm:flex-row"
+  | "sm:flex-col";
 
-export type CSSPropertyJustifyContent =
-  | CSSPropertyGlobals
-  | ContentDistribution
-  | ContentPosition
-  | "left"
-  | "normal"
-  | "right"
-  | (string & {});
-
-export type CSSPropertyFlexWrap =
-  | CSSPropertyGlobals
-  | "nowrap"
-  | "wrap"
-  | "wrap-reverse";
-
-export type CSSPropertyFlexDirection =
-  | CSSPropertyGlobals
-  | "column"
-  | "column-reverse"
-  | "row"
-  | "row-reverse";
-
-export type CSSPropertyJustifySelf =
-  | CSSPropertyGlobals
-  | SelfPosition
-  | "auto"
-  | "baseline"
-  | "left"
-  | "normal"
-  | "right"
-  | "stretch"
-  | (string & {});
-
-export type CSSPropertyAlignSelf =
-  | CSSPropertyGlobals
-  | SelfPosition
-  | "auto"
-  | "baseline"
-  | "normal"
-  | "stretch"
-  | (string & {});
-
-/**
- * Grid
- */
-type GridLine = "auto" | (string & {});
-
-export type CSSPropertyGridColumn =
-  | CSSPropertyGlobals
-  | GridLine
-  | (string & {});
+//text
+type textAlign =
+  | "text-left"
+  | "text-center"
+  | "text-right"
+  | "text-justify"
+  | "text-start"
+  | "text-end";
 
 export type fontSizeType = keyof typeof fontSize;
 export type colorType = keyof typeof colors | (string & {});
+export type backgroundColorsType =
+  | keyof typeof backgroundColors
+  | (string & {});
+
+//width,height
+export type widthType = keyof typeof widthSize;
+export type heightType = keyof typeof heightSize;
+export type maxWidthType = keyof typeof maxWidth;
+export type maxHeightType = keyof typeof maxHeight;
+
+//margin
+export type marginSizeType = keyof typeof marginSize;
+export type marginTopType = keyof typeof marginTop;
+export type marginBottomType = keyof typeof marginBottom;
+export type marginLeftType = keyof typeof marginLeft;
+export type marginRightType = keyof typeof marginRight;
+export type marginXType = keyof typeof marginX;
+export type marginYType = keyof typeof marginY;
+
+//padding
+export type paddingSizeType = keyof typeof paddingSize;
+export type paddingTopType = keyof typeof paddingTop;
+export type paddingBottomType = keyof typeof paddingBottom;
+export type paddingLeftType = keyof typeof paddingLeft;
+export type paddingRightType = keyof typeof paddingRight;
+export type paddingXType = keyof typeof paddingX;
+export type paddingYType = keyof typeof paddingY;
+
+//border
+export type borderType = keyof typeof borders;
+export type borderColorType = keyof typeof borderColors;
+export type borderRadiusType = keyof typeof borderRadius;

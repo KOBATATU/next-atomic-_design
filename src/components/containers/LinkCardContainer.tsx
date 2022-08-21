@@ -30,7 +30,7 @@ const LinkCardContainer = () => {
       justifyContent="justify-center"
       alignItems="items-center"
       flexWrap="flex-wrap"
-      maxWidth="max-w-3xl"
+      maxWidth="max-w-768px"
     >
       {LinkCards.map((card) => (
         <LinkCard link={card.link} title={card.title} content={card.content} />

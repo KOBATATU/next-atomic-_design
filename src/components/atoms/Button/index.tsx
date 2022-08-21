@@ -1,50 +1,78 @@
 import type {
+  backgroundColorsType,
+  borderColorType,
+  borderRadiusType,
+  borderType,
   colorType,
   fontSizeType,
+  heightType,
   HoverProp,
+  marginBottomType,
+  marginLeftType,
+  marginRightType,
+  marginSizeType,
+  marginTopType,
+  marginXType,
+  marginYType,
+  maxHeightType,
+  maxWidthType,
+  paddingBottomType,
+  paddingLeftType,
+  paddingRightType,
+  paddingSizeType,
+  paddingTopType,
+  paddingXType,
+  paddingYType,
   Responsive,
+  textAlign,
+  widthType,
 } from "types/styles";
 import { hoverExpansion, toTailWindValue } from "utils/styles";
 
 export type ButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> & {
-  fontSize?: Responsive<fontSizeType>;
   children?: React.ReactNode;
+
+  hover?: HoverProp;
+
+  //color
+  textColor?: Responsive<colorType>;
+  backgroundColor?: Responsive<backgroundColorsType>;
+  //text
+  fontSize?: Responsive<fontSizeType>;
   fontWeight?: Responsive<string>;
   letterSpacing?: Responsive<string>;
   lineHeight?: Responsive<string>;
-  textAlign?: Responsive<string>;
-  borderRadius?: Responsive<string>;
-  hover?: HoverProp;
+  textAlign?: Responsive<textAlign>;
 
-  textColor?: Responsive<colorType>;
-  backgroundColor?: Responsive<string>;
-  //width/height
-  width?: Responsive<string>;
-  height?: Responsive<string>;
+  //width height
+  width?: Responsive<widthType>;
+  maxWidth?: Responsive<maxWidthType>;
+  maxHeight?: Responsive<maxHeightType>;
+  height?: Responsive<heightType>;
   minWidth?: Responsive<string>;
   minHeight?: Responsive<string>;
+  //margin
+  margin?: Responsive<marginSizeType>;
+  marginTop?: Responsive<marginTopType>;
+  marginRight?: Responsive<marginRightType>;
+  marginBottom?: Responsive<marginBottomType>;
+  marginLeft?: Responsive<marginLeftType>;
+  marginY?: Responsive<marginYType>;
+  marginX?: Responsive<marginXType>;
+  //padding
+  padding?: Responsive<paddingSizeType>;
+  paddingTop?: Responsive<paddingTopType>;
+  paddingRight?: Responsive<paddingRightType>;
+  paddingBottom?: Responsive<paddingBottomType>;
+  paddingLeft?: Responsive<paddingLeftType>;
+  paddingX?: Responsive<paddingXType>;
+  paddingY?: Responsive<paddingYType>;
 
-  // //margin
-  margin?: Responsive<string>;
-  marginTop?: Responsive<string>;
-  marginRight?: Responsive<string>;
-  marginBottom?: Responsive<string>;
-  marginLeft?: Responsive<string>;
-  marginY?: Responsive<string>;
-  marginX?: Responsive<string>;
-
-  // //padding
-  padding?: Responsive<string>;
-  paddingTop?: Responsive<string>;
-  paddingRight?: Responsive<string>;
-  paddingBottom?: Responsive<string>;
-  paddingLeft?: Responsive<string>;
-  paddingX?: Responsive<string>;
-  paddingY?: Responsive<string>;
-
-  // //そのほか
+  // そのほか
+  border?: Responsive<borderType>;
+  borderRadius?: Responsive<borderRadiusType>;
+  borderColor?: Responsive<borderColorType>;
   display?: Responsive<string>;
-  border?: Responsive<string>;
   overflow?: Responsive<string>;
 };
 
