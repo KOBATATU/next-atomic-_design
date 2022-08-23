@@ -16,5 +16,6 @@ const fontSize = {
 //そのため使わないが、動的に使うものだけはここで記載
 const _fontSize: keyType = { ...fontSize };
 _fontSize["md:text-base"] = "md:text-base";
+_fontSize["sm:text-2xl"] = "sm:text-2xl";
 
 export default fontSize;

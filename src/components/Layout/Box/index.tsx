@@ -68,6 +68,7 @@ export type BoxProps = {
   border?: Responsive<borderType>;
   borderRadius?: Responsive<borderRadiusType>;
   borderColor?: Responsive<borderColorType>;
+  borderBottom?: Responsive<string>;
   overflow?: Responsive<string>;
 };
 
@@ -99,6 +100,7 @@ const Box = (props: BoxProps) => {
     marginX,
     marginY,
     border,
+    borderBottom,
     ...rest
   } = props;
 
@@ -125,6 +127,7 @@ const Box = (props: BoxProps) => {
   className += toTailWindValue(marginRight);
   className += toTailWindValue(marginX);
   className += toTailWindValue(marginY);
+  className += toTailWindValue(borderBottom);
 
   return (
     <div className={className} {...rest}>

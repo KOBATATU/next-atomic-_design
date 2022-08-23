@@ -33,7 +33,12 @@ const LinkCardContainer = () => {
       maxWidth="max-w-768px"
     >
       {LinkCards.map((card) => (
-        <LinkCard link={card.link} title={card.title} content={card.content} />
+        <LinkCard
+          link={card.link}
+          title={card.title}
+          content={card.content}
+          key={card.title}
+        />
       ))}
     </Flex>
   );
