@@ -3,7 +3,6 @@ import Box from "components/Layout/Box";
 import Flex from "components/Layout/Flex";
 import Link from "next/link";
 import { useAuthContext } from "pages/contexts/AuthContexts";
-import { useEffect } from "react";
 const Header = () => {
   const { authUser, isLoading } = useAuthContext();
 
@@ -28,7 +27,6 @@ const Header = () => {
         </Flex>
         <Flex height="h-100%" alignItems="items-center">
           {(() => {
-            // 認証していたらアイコンを表示
             if (authUser) {
               return (
                 <Text as="p" fontSize={{ base: "text-base", sm: "text-2xl" }}>
@@ -36,7 +34,6 @@ const Header = () => {
                 </Text>
               );
             } else {
-              // サインインしてない場合はアイコンを表示
               return (
                 <Text as="p" fontSize={{ base: "text-base", sm: "text-2xl" }}>
                   認証不可
